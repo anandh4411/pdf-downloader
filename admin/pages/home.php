@@ -17,7 +17,7 @@ if (!isset($_SESSION["admin-username"])){
   
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a style="margin-left: 10px;" class="navbar-brand" href="#">Admin Area</a>
+          <a style="margin-left: 10px;" class="navbar-brand" href="#">Admin Panel</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -40,11 +40,11 @@ if (!isset($_SESSION["admin-username"])){
         </nav>
       <!-- Navbar End -->
   
-      <div class="container">
-        <div class="row">
+      <div style="margin-top: 30px;" class="container">
+        <div class="col">
 
             <!-- New PDF -->
-            <div class="card" style="width: 25rem;">
+            <div class="card" style="width: 70%;">
               <h4>Add a new PDF file</h4>
               <form action="../php/add-pdf.php" method="post" enctype="multipart/form-data">
                   <div class="form-group">
@@ -69,7 +69,7 @@ if (!isset($_SESSION["admin-username"])){
             <!-- New Movie End -->
 
             <!-- New Admin -->
-            <div class="card" style="width: 25rem;">
+            <div class="card" style="width: 70%;">
               <h4>Add a new Admin User</h4>
               <form action="../php/new-admin.php" method="post" enctype="multipart/form-data">
                   <div class="form-group">
@@ -78,11 +78,11 @@ if (!isset($_SESSION["admin-username"])){
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Password</label>
-                    <input name="password" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Password"/>
+                    <input name="password" type="password" class="form-control" id="exampleInputEmail1" placeholder="Enter Password"/>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Confirm Password</label>
-                    <input name="cpassword" type="text" class="form-control" id="exampleInputEmail1" placeholder="Confirm Password"/>
+                    <input name="cpassword" type="password" class="form-control" id="exampleInputEmail1" placeholder="Confirm Password"/>
                   </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
               </form>
@@ -93,7 +93,7 @@ if (!isset($_SESSION["admin-username"])){
         <!-- All PDF List -->
         <div style="margin-top: 100px; margin-bottom: 50px;" class="container">
           <div class="table-style">
-            <h2 class="text-center">List of movies we have</h2>
+            <h2 class="text-center">List of PDFs we have</h2>
             <table class="table">
               <thead>
                 <tr>
@@ -111,10 +111,10 @@ if (!isset($_SESSION["admin-username"])){
                 while($row = mysqli_fetch_array($result)){
                       echo '<tr>
                               <th scope="row">'.$row["id"].'</th>
-                              <td><img id="img-preview" src="../../uploads/'.$row["name"].'"/></td>
+                              <td>'.$row["name"].'</td>
                               <td>'.$row["date"].'</td>
                               <td>'.$row["time"].'</td>
-                              <td><a href="../../pdf/'.$row["name"].'" class="btn btn-primary">Download</a></td>
+                              <td><a href="../../pdf/'.$row["pdf"].'" class="btn btn-primary">Download</a></td>
                             </tr>';
                 }
                 ?>

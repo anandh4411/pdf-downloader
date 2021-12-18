@@ -15,7 +15,7 @@ $pdf = $_FILES["pdf"];
 $pdf_name = $_FILES["pdf"]["name"];
 $pdftmp_name = $_FILES["pdf"]["tmp_name"];
 // Path to store uploaded pdfs
-$destination = "../../pdf/".basename($pdf_name + $id);
+$destination = "../../pdf/".basename($pdf_name);
 $query2 = "INSERT INTO pdf (name, date, time, pdf)
 VALUES ('$name', '$date', '$time', '$pdf_name')";
 mysqli_query($connect, $query2);

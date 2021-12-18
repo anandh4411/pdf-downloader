@@ -1,0 +1,20 @@
+.card {
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px; 
+    background-color: rgb(230, 230, 230);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+#img-preview{
+    width: 60px !important;
+}
+.table-style{
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 10px;
+}
+input{
+    margin-bottom: 10px !important;
+}

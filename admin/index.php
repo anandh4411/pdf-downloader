@@ -18,7 +18,7 @@
         }
         else{
             echo '<div class="container">
-                    <div class="card" style="width: 25rem;">
+                    <div class="card" style="width: 60%;">
                         <form action="php/login.php" method="post">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Username</label>
